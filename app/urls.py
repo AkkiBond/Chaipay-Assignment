@@ -21,7 +21,7 @@ from app.api.views import capture_charge, create_charge, list_charges, create_re
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^api/v1/create_charge',create_charge),
-    url(r'^api/v1/capture_charge',capture_charge),
-    url(r'^api/v1/list_charges',list_charges),
-    url(r'^api/v1/create_refund',create_refund)
+    url(r'^api/v1/capture_charge/(?P<pid>[\w-]+)',capture_charge),
+    url(r'^api/v1/get_charges',list_charges),
+    url(r'^api/v1/create_refund/(?P<pid>[\w-]+)',create_refund)
 ]
